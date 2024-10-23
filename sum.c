@@ -5,6 +5,6 @@ int main(){
     int y = 3;
     int sum = x+y;
 
-    printf("the sum is:%d", sum);
+    printf("the sum is:%d\n", sum);
     return 0;
 }
