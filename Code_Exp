@@ -1,0 +1,69 @@
+Code Explanation:
+c
+Copy code
+#include <stdio.h>
+Purpose: Includes the standard input/output library for using functions like printf and scanf.
+c
+Copy code
+int main() {
+Purpose: Entry point of the program. The main function is where the execution starts.
+c
+Copy code
+    int n, i;
+    unsigned long long factorial = 1;
+Purpose:
+int n, i;: Declares two integer variables: n (to store the number entered by the user) and i (used as a loop counter).
+unsigned long long factorial = 1;: Declares a variable factorial to store the result of the factorial calculation. The unsigned long long type is used to handle large values that result from factorial calculations.
+c
+Copy code
+    printf("Enter a positive integer: ");
+Purpose: Prompts the user to enter a positive integer.
+c
+Copy code
+    scanf("%d", &n);
+Purpose: Reads the user input and stores it in the variable n. The %d format specifier is used to read an integer.
+c
+Copy code
+    if (n < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    }
+Purpose:
+Checks if the entered number n is negative.
+If n is less than 0, it prints a message stating that factorial is not defined for negative numbers. No further calculations are done in this case.
+c
+Copy code
+    else {
+        for (i = 1; i <= n; ++i) {
+            factorial *= i;
+        }
+Purpose:
+else block: Executes if the input number is non-negative.
+for loop:
+Initializes i to 1 and iterates up to n.
+On each iteration, multiplies factorial by i and updates the value of factorial.
+This computes the factorial of n iteratively.
+c
+Copy code
+        printf("Factorial of %d = %llu\n", n, factorial);
+    }
+Purpose:
+Prints the computed factorial.
+%d: Prints the value of n as an integer.
+%llu: Prints the value of factorial as an unsigned long long integer.
+c
+Copy code
+    return 0;
+Purpose: Indicates the program terminated successfully.
+Example Execution:
+Input:
+bash
+Copy code
+Enter a positive integer: 5
+Execution:
+n is assigned the value 5.
+The else block executes, and the loop computes:
+factorial = 1 × 1 = 1
+factorial = 1 × 2 = 2
+factorial = 2 × 3 = 6
+factorial = 6 × 4 = 24
+factorial = 24 × 5 = 120
